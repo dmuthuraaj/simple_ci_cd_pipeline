@@ -1,5 +1,5 @@
 # builder image
-FROM golang:1.21.5 as builder
+FROM golang:1.21 as builder
 
 ARG VERSION=dev
 
