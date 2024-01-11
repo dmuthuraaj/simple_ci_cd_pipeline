@@ -10,5 +10,6 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -o main -ldflags=-X=main.version=${VERS
 
 # generate clean, final image for end users
 FROM alpine:latest
-COPY --from=builder /app/main .
+WORKDIR /app
+COPY --from=builder /app .
 CMD ["./main"]
